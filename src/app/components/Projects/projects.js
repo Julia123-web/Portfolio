@@ -14,18 +14,18 @@ export default function About() {
 					<div className="lg:w-1/2 w-full">
 						<div className="flex lg:flex-col md:flex-row">
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={myFirst} />
+								<Image src={myFirst} alt="first" />
 							</div>
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={mySecond} />
+								<Image src={mySecond} alt="second" />
 							</div>
 						</div>
 						<div className="flex lg:flex-col md:flex-row">
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={myThird} />
+								<Image src={myThird} alt="third" />
 							</div>
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={myFourth} />
+								<Image src={myFourth} alt="fourth" />
 							</div>
 						</div>
 					</div>
