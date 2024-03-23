@@ -64,11 +64,11 @@ frontend-portfolio/
 
 To explore my portfolio and understand its structure, you can follow these steps:
 
-1 - Clone this repository to your local machine using git clone.
-2 - Navigate to the repository directory.
-3 - Install dependencies by running npm install or yarn install.
-4 - Explore the src/ directory to understand the organization of components and pages.
-5 - Dive into specific components to see their implementation and functionality.
+1. Clone this repository to your local machine using git clone.
+2. Navigate to the repository directory.
+3. Install dependencies by running npm install or yarn install.
+4. Explore the src/ directory to understand the organization of components and pages.
+5. Dive into specific components to see their implementation and functionality.
 
 Feel free to reach out if you have any questions or feedback. Thank you for visiting my portfolio!
 
