@@ -7,6 +7,7 @@ import Footer from './components/Footer/footer';
 export default function Home() {
 	return (
 		<div>
+			<link rel="icon" href="/favicon.ico" />
 			<div className="h-[400px]">
 				<Header></Header>
 			</div>
