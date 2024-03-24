@@ -40,8 +40,8 @@ export default function About() {
 									I've been working on as a frontend developer at Ambassadors. You
 									know, it's been an incredible journey crafting dynamic and
 									captivating videos for some of the biggest names out there like
-									booking.com, Dyson, Bol, and Squarespace. At Ambassadors, I'm
-									part of the creative automation team Cube, where we're all about
+									booking.com, Dyson, Bol, Squarespace. At Ambassadors, I'm part
+									of the creative automation team Cube, where we're all about
 									revolutionizing the way brands approach their creative workflow.
 								</p>
 							</div>
