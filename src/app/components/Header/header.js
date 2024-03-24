@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import myLogo from '../../../../public/J.png';
-import Image from 'next/image';
+import Image2 from 'next/image';
 
 const Header = () => {
 	const [isOpen, setOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
 			<div>
 				<div className="font-mono gap-4 px-10 flex sm:text-4xl text-3xl mb-4 font-medium">
 					<div className="max-w-10 relative bottom-1">
-						<Image className="rounded-2xl" src={myLogo} alt="logo" />
+						<Image2 className="rounded-2xl" src={myLogo} alt="logo" />
 					</div>
 					Julia Silva
 				</div>

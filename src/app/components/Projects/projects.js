@@ -4,7 +4,7 @@ import myFirst from '../../../../public/first.gif';
 import mySecond from '../../../../public/second.gif';
 import myThird from '../../../../public/third.gif';
 import myFourth from '../../../../public/fourth.gif';
-import Image from 'next/image';
+import Image3 from 'next/image';
 
 export default function About() {
 	return (
@@ -14,18 +14,18 @@ export default function About() {
 					<div className="lg:w-1/2 w-full">
 						<div className="flex lg:flex-col md:flex-row">
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={myFirst} alt="first" />
+								<Image3 src={myFirst} alt="first" />
 							</div>
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={mySecond} alt="second" />
+								<Image3 src={mySecond} alt="second" />
 							</div>
 						</div>
 						<div className="flex lg:flex-col md:flex-row">
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={myThird} alt="third" />
+								<Image3 src={myThird} alt="third" />
 							</div>
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
-								<Image src={myFourth} alt="fourth" />
+								<Image3 src={myFourth} alt="fourth" />
 							</div>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import myImage from '../../../../public/image.jpg';
-import Image from 'next/image';
+import Image1 from 'next/image';
 
 export default function About() {
 	return (
@@ -42,7 +42,7 @@ export default function About() {
 					</a>
 				</div>
 				<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-					<Image className="rounded-2xl" src={myImage} alt="my image" />
+					<Image1 className="rounded-2xl" src={myImage} alt="my image" />
 				</div>
 			</div>
 		</div>
