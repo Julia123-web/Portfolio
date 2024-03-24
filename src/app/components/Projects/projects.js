@@ -30,7 +30,7 @@ export default function About() {
 						</div>
 					</div>
 					<div className="lg:w-1/2 w-full md:p-4">
-						<div className="font-mono text-center text-8xl p-6 mb-4 font-medium">
+						<div className="font-mono text-center text-8xl py-6 mb-4 font-medium">
 							Projects
 						</div>
 						<div className="max-w-[1000px]">
