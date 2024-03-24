@@ -27,7 +27,7 @@ const Footer = () => {
 				</a>
 			</div>
 			<br />
-			<div className="text-white mt-2">
+			<div className="flex flex-col items-center text-white mt-2">
 				<span>
 					Email:{' '}
 					<a href="mailto:juliadesouzaesilva@gmail.com">juliadesouzaesilva@gmail.com</a>
