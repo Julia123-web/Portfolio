@@ -14,7 +14,7 @@ export default function Home() {
 			<div className="h-[600px]">
 				<Hero></Hero>
 			</div>
-			<div className="lg:h-[500px] md:h-[900px]">
+			<div className="lg:h-[700px] md:h-[900px]">
 				<About></About>
 			</div>
 			<div className="lg:h-[1300px] md:h-[1600px]">
