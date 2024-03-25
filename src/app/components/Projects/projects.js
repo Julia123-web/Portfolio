@@ -47,7 +47,7 @@ export default function About() {
 							</div>
 							<div className="sm:text-base md:text-lg lg:text-xl">
 								<p className="mb-4">
-									Using my skills in JavaScript, HTML, and CSS, I've had the
+									Using my skills in JavaScript, React, HTML, CSS, I've had the
 									privilege to build custom UI templates that help our clients
 									automate their video production process. It's been amazing to
 									see how these templates not only streamline their workflow but
