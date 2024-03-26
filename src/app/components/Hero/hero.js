@@ -6,15 +6,16 @@ import BackgroundAnimation from '../backgroundAnimation/backgroundAnimation';
 export default function Hero() {
 	const [typedText, setTypedText] = useState('');
 	const texts = ['Hello,', 'My name is Julia'];
+	const typingSpeed = 150;
 
 	useEffect(() => {
 		let currentTextIndex = 0;
 		let currentText = '';
-		let intervalId;
+		let timeoutId;
 
 		const type = () => {
 			if (currentTextIndex === texts.length) {
-				currentTextIndex = 0;
+				return;
 			}
 			const targetText = texts[currentTextIndex];
 			const typingInterval = setInterval(() => {
@@ -22,18 +23,23 @@ export default function Hero() {
 				setTypedText(currentText);
 				if (currentText === targetText) {
 					clearInterval(typingInterval);
-					setTimeout(() => {
+					timeoutId = setTimeout(() => {
 						currentTextIndex++;
+						if (currentTextIndex === texts.length) {
+							return;
+						}
+						setTypedText('');
 						type();
 					}, 1000);
 				}
-			}, 150);
-			intervalId = typingInterval;
+			}, typingSpeed);
 		};
 
 		type();
 
-		return () => clearInterval(intervalId);
+		return () => {
+			clearInterval(timeoutId);
+		};
 	}, []);
 
 	return (
@@ -51,11 +57,13 @@ export default function Hero() {
 				{typedText && (
 					<>
 						{typedText}
-						<motion.span
-							className="inline-block h-[40px] w-[3px] bg-orange-500 ml-1"
-							animate={{ scaleY: [0, 1, 0] }}
-							transition={{ duration: 0.5, repeat: Infinity }}
-						/>
+						{texts.length > 1 && (
+							<motion.span
+								className="inline-block h-[40px] w-[3px] bg-orange-500 ml-1"
+								animate={{ scaleY: [0, 1, 0] }}
+								transition={{ duration: 0.5, repeat: Infinity }}
+							/>
+						)}
 					</>
 				)}
 			</motion.div>

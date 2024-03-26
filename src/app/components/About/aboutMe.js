@@ -13,13 +13,13 @@ export default function About() {
 						I am a Frontend Developer
 					</div>
 					<div className="mb-8 leading-relaxed">
-						Hey there! 🌟 So, picture this: seven years ago, I packed my bags and took a
-						leap of faith, moving to the Netherlands. Crazy, right? But that's where the
-						adventure began. Five years ago, I found myself itching for a change in
-						career. Tech seemed like the perfect fit, so I started dabbling in building
-						websites in my free time. Turns out, I fell head over heels for it. Four
-						years ago, I proudly snagged my diploma, officially marking my transition
-						into the tech world.
+						Hey there! 🌟 So, picture this: seven years ago, I packed my bags in Brazil
+						and took a leap of faith, moving to the Netherlands. Crazy, right? But
+						that's where the adventure began. Five years ago, I found myself itching for
+						a change in career. Tech seemed like the perfect fit, so I started dabbling
+						in building websites in my free time. Turns out, I fell head over heels for
+						it. Four years ago, I proudly snagged my diploma, officially marking my
+						transition into the tech world.
 					</div>
 					<div className="mb-8 leading-relaxed">
 						Mistakes? Oh, they're just part of the journey! I've learned that they're
