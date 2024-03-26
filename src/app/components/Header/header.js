@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import myLogo from '../../../../public/J.png';
 import Image2 from 'next/image';
+import { motion } from 'framer-motion';
 
 const Header = () => {
 	const [isOpen, setOpen] = useState(false);
@@ -26,6 +27,14 @@ const Header = () => {
 		setOpen(!isOpen);
 	};
 
+	const scrollToSection = (id) => {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+		setOpen(false);
+	};
+
 	return (
 		<div className="container mx-auto flex py-10 md:flex-row flex-col relative justify-between items-center">
 			<div>
@@ -37,46 +46,52 @@ const Header = () => {
 				</div>
 			</div>
 
-			<div className="relative bottom-3 inline-block text-left" ref={menuRef}>
-				<button
+			<div
+				className="fixed inset-x-0 top-0 bg-[#DA5F34] h-full text-white z-50 overflow-hidden"
+				style={{ display: isOpen ? 'block' : 'none' }}
+				ref={menuRef}
+			>
+				<div className="flex justify-end p-4">
+					<button className="text-3xl" onClick={toggleDropdown}>
+						✕
+					</button>
+				</div>
+				<div className="font-mono lg:flex lg:flex-row flex flex-col justify-around items-center h-[80%]">
+					<a
+						href="#about"
+						className="text-5xl mr-4"
+						onClick={() => scrollToSection('about')}
+					>
+						About me
+					</a>
+					<a
+						href="#projects"
+						className="text-5xl mr-4"
+						onClick={() => scrollToSection('projects')}
+					>
+						Projects
+					</a>
+					<a
+						href="#contact"
+						className="text-5xl"
+						onClick={() => scrollToSection('contact')}
+					>
+						Contact
+					</a>
+				</div>
+			</div>
+
+			<div className="relative bottom-3 inline-block text-left">
+				<motion.button
+					whileHover={{ scale: 1.5 }}
 					type="button"
-					className="inline-flex justify-center w-full rounded-md px-10 py-2 text-5xl font-medium focus:outline-none"
+					className={`relative z-10 inline-flex justify-center w-full rounded-md px-10 py-2 text-5xl font-medium focus:outline-none ${
+						isOpen ? 'text-white' : 'text-white'
+					}`}
 					onClick={toggleDropdown}
 				>
 					☰
-				</button>
-				{isOpen && (
-					<div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-						<div
-							className="py-1"
-							role="menu"
-							aria-orientation="vertical"
-							aria-labelledby="options-menu"
-						>
-							<a
-								href="#about"
-								className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-								role="menuitem"
-							>
-								About me
-							</a>
-							<a
-								href="#projects"
-								className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-								role="menuitem"
-							>
-								Projects
-							</a>
-							<a
-								href="#contact"
-								className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-								role="menuitem"
-							>
-								Contact
-							</a>
-						</div>
-					</div>
-				)}
+				</motion.button>
 			</div>
 		</div>
 	);

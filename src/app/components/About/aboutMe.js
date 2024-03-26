@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
 import myImage from '../../../../public/image.jpg';
 import Image1 from 'next/image';
 
@@ -35,12 +36,13 @@ export default function About() {
 						digital world! 🚀
 					</div>
 					<a href="/JuliaCV.pdf" target="_blank">
-						<button
+						<motion.button
+							whileHover={{ scale: 1.2 }}
 							type="button"
 							className="font-mono rounded-full bg-white hover:bg-b0 text-black font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
 						>
 							<div>Resume</div>
-						</button>
+						</motion.button>
 					</a>
 				</div>
 				<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
