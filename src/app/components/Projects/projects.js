@@ -12,7 +12,7 @@ export default function About() {
 			<div className="container mx-auto px-10 py-20">
 				<div className="flex flex-col-reverse lg:flex-row items-center">
 					<div className="lg:w-1/2 w-full">
-						<div className="flex lg:flex-col md:flex-row">
+						<div className="flex flex-col">
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
 								<Image3 src={myFirst} alt="first" />
 							</div>
@@ -20,7 +20,7 @@ export default function About() {
 								<Image3 src={mySecond} alt="second" />
 							</div>
 						</div>
-						<div className="flex lg:flex-col md:flex-row">
+						<div className="flex flex-col">
 							<div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 p-4">
 								<Image3 src={myThird} alt="third" />
 							</div>
