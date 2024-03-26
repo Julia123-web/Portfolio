@@ -1,5 +1,7 @@
 ## Julia Silva - Portfolio
 
+👉 https://www.juliasilvadeveloper.com/
+
 Welcome to my frontend developer portfolio. In this repository, you'll find a showcase of my projects and contributions as a frontend developer. Below, I'll provide you with an overview of the technologies I use, the structure of this repository, and how to navigate through it.
 
 ## Technologies Used:
