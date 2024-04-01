@@ -52,14 +52,14 @@ export default function Hero() {
 					stiffness: 180,
 					damping: 20,
 				}}
-				className="font-mono lg:text-9xl text-8xl"
+				className="text-white font-mono lg:text-9xl text-8xl"
 			>
 				{typedText && (
 					<>
 						{typedText}
 						{texts.length > 1 && (
 							<motion.span
-								className="inline-block h-[40px] w-[3px] bg-orange-500 ml-1"
+								className="text-white  inline-block h-[40px] w-[3px] bg-orange-500 ml-1"
 								animate={{ scaleY: [0, 1, 0] }}
 								transition={{ duration: 0.5, repeat: Infinity }}
 							/>

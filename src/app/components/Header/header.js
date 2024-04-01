@@ -38,7 +38,7 @@ const Header = () => {
 	return (
 		<div className="container mx-auto flex py-10 md:flex-row flex-col relative justify-between items-center">
 			<div>
-				<div className="font-mono gap-4 px-10 flex sm:text-4xl text-3xl mb-4 font-medium">
+				<div className="text-white font-mono gap-4 px-10 flex sm:text-4xl text-3xl mb-4 font-medium">
 					<div className="max-w-10 relative bottom-1">
 						<Image2 className="rounded-2xl" src={myLogo} alt="logo" />
 					</div>
@@ -59,21 +59,21 @@ const Header = () => {
 				<div className="font-mono lg:flex lg:flex-row flex flex-col justify-around items-center h-[80%]">
 					<a
 						href="#about"
-						className="text-5xl mr-4"
+						className="text-white text-5xl mr-4"
 						onClick={() => scrollToSection('about')}
 					>
 						About me
 					</a>
 					<a
 						href="#projects"
-						className="text-5xl mr-4"
+						className="text-white text-5xl mr-4"
 						onClick={() => scrollToSection('projects')}
 					>
 						Projects
 					</a>
 					<a
 						href="#contact"
-						className="text-5xl"
+						className="text-white text-5xl"
 						onClick={() => scrollToSection('contact')}
 					>
 						Contact

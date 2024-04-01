@@ -29,12 +29,12 @@ export default function About() {
 							</div>
 						</div>
 					</div>
-					<div className="lg:w-1/2 w-full md:p-4">
+					<div className="text-white lg:w-1/2 w-full md:p-4">
 						<div className="font-mono text-center lg:text-8xl text-4xl py-6 mb-4 font-medium">
 							Projects
 						</div>
 						<div className="max-w-[1000px]">
-							<div className="sm:text-base md:text-lg lg:text-xl">
+							<div className="text-white sm:text-base md:text-lg lg:text-xl">
 								<p className="mb-4">
 									I'm thrilled to share with you some of the exciting projects
 									I've been working on as a frontend developer at Ambassadors. You
@@ -45,7 +45,7 @@ export default function About() {
 									way brands approach their creative workflow.
 								</p>
 							</div>
-							<div className="sm:text-base md:text-lg lg:text-xl">
+							<div className="text-white sm:text-base md:text-lg lg:text-xl">
 								<p className="mb-4">
 									Using my skills in JavaScript, React, HTML, CSS, I've had the
 									privilege to build custom UI templates that help our clients
