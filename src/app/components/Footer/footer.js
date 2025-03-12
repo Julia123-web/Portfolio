@@ -5,41 +5,61 @@ import { CiLinkedin } from 'react-icons/ci';
 import { FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
-	return (
-		<div id="contact" className="relative top-80 flex flex-col items-center">
-			<div className="text-white">&copy; 2024 Julia Silva. All Rights Reserved.</div>
-			<br />
-			<div className="flex space-x-4 scale-150 relative top-1">
-				<a
-					href="https://github.com/Julia123-web"
-					target="_blank"
-					className="text-white hover:text-white"
-				>
-					<FaGithub></FaGithub>
-				</a>
+  return (
+    <div id="contact" className="bg-gray-900 text-white py-12 mt-32">
+      <div className="container mx-auto text-center">
+        {/* Copyright Section */}
+        <div className="mb-6 text-sm md:text-base">
+          <span>&copy; 2024 Julia Silva. All Rights Reserved.</span>
+        </div>
 
-				<a
-					href="https://www.linkedin.com/in/julia-silva-2b242b171/"
-					target="_blank"
-					className="text-white hover:text-white"
-				>
-					<CiLinkedin></CiLinkedin>
-				</a>
-			</div>
-			<br />
-			<div className="flex flex-col items-center text-white mt-2">
-				<span>
-					Email:{' '}
-					<a href="mailto:juliadesouzaesilva@gmail.com">juliadesouzaesilva@gmail.com</a>
-				</span>
-				<span className="ml-4">
-					Phone: <a href="tel:+310615125932">+310615125932</a>
-				</span>
-			</div>
+        {/* Social Media Icons */}
+        <div className="flex justify-center space-x-6 mb-6 text-3xl md:text-4xl">
+          <a
+            href="https://github.com/Julia123-web"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#DA5F34] transition-colors"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
 
-			<br />
-		</div>
-	);
+          <a
+            href="https://www.linkedin.com/in/julia-silva-2b242b171/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#DA5F34] transition-colors"
+            aria-label="LinkedIn"
+          >
+            <CiLinkedin />
+          </a>
+        </div>
+
+        {/* Contact Information */}
+        <div className="text-sm md:text-base">
+          <p className="mb-2">
+            Email:{' '}
+            <a
+              href="mailto:juliadesouzaesilva@gmail.com"
+              className="text-white hover:text-[#DA5F34] transition-colors"
+            >
+              juliadesouzaesilva@gmail.com
+            </a>
+          </p>
+          <p>
+            Phone:{' '}
+            <a
+              href="tel:+310615125932"
+              className="text-white hover:text-[#DA5F34] transition-colors"
+            >
+              +310615125932
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;

@@ -8,19 +8,19 @@ export default function Home() {
 	return (
 		<div>
 			<link rel="icon" href="/favicon.ico" />
-			<div className="h-[400px]">
+			<div >
 				<Header></Header>
 			</div>
-			<div className="h-[600px]">
+			<div>
 				<Hero></Hero>
 			</div>
-			<div className="lg:h-[700px] md:h-[900px]">
+			<div>
 				<About></About>
 			</div>
-			<div className="lg:h-[1300px] md:h-[1600px]">
+			<div>
 				<Projects></Projects>
 			</div>
-			<div className="h-[300px]">
+			<div>
 				<Footer></Footer>
 			</div>
 		</div>

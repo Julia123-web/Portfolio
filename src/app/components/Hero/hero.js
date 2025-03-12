@@ -4,72 +4,80 @@ import { motion } from 'framer-motion';
 import BackgroundAnimation from '../backgroundAnimation/backgroundAnimation';
 
 export default function Hero() {
-	const [typedText, setTypedText] = useState('');
-	const texts = ['Hello,', 'My name is Julia'];
-	const typingSpeed = 150;
+  const [typedText, setTypedText] = useState('');
+  const texts = ['Hello,', 'I’m Julia', 'Freelance Frontend Developer'];
+  const typingSpeed = 100;
 
-	useEffect(() => {
-		let currentTextIndex = 0;
-		let currentText = '';
-		let timeoutId;
+  useEffect(() => {
+    let currentTextIndex = 0;
+    let currentText = '';
+    let timeoutId;
 
-		const type = () => {
-			if (currentTextIndex === texts.length) {
-				return;
-			}
-			const targetText = texts[currentTextIndex];
-			const typingInterval = setInterval(() => {
-				currentText = targetText.slice(0, currentText.length + 1);
-				setTypedText(currentText);
-				if (currentText === targetText) {
-					clearInterval(typingInterval);
-					timeoutId = setTimeout(() => {
-						currentTextIndex++;
-						if (currentTextIndex === texts.length) {
-							return;
-						}
-						setTypedText('');
-						type();
-					}, 1000);
-				}
-			}, typingSpeed);
-		};
+    const type = () => {
+      if (currentTextIndex === texts.length) {
+        return;
+      }
+      const targetText = texts[currentTextIndex];
+      const typingInterval = setInterval(() => {
+        currentText = targetText.slice(0, currentText.length + 1);
+        setTypedText(currentText);
+        if (currentText === targetText) {
+          clearInterval(typingInterval);
+          timeoutId = setTimeout(() => {
+            currentTextIndex++;
+            if (currentTextIndex === texts.length) {
+              return;
+            }
+            setTypedText('');
+            type();
+          }, 1000);
+        }
+      }, typingSpeed);
+    };
 
-		type();
+    type();
 
-		return () => {
-			clearInterval(timeoutId);
-		};
-	}, []);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
-	return (
-		<div className="flex justify-center items-center text-center text-4xl" id="hero">
-			<motion.div
-				initial={{ scale: 0 }}
-				animate={{ rotate: 360, scale: 1 }}
-				transition={{
-					type: 'spring',
-					stiffness: 180,
-					damping: 20,
-				}}
-				className="text-white font-mono lg:text-9xl text-8xl"
-			>
-				{typedText && (
-					<>
-						{typedText}
-						{texts.length > 1 && (
-							<motion.span
-								className="text-white  inline-block h-[40px] w-[3px] bg-orange-500 ml-1"
-								animate={{ scaleY: [0, 1, 0] }}
-								transition={{ duration: 0.5, repeat: Infinity }}
-							/>
-						)}
-					</>
-				)}
-			</motion.div>
-			<div className="top-[200px] absolute h-[100px] lg:w-[900px] md:object-scale-down">
-				<BackgroundAnimation />
-			</div>
-		</div>
-	);
+  return (
+    <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-900 relative">
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ rotate: 360, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 180, damping: 20 }}
+        className="text-white font-mono lg:text-6xl md:text-5xl text-4xl mb-4"
+      >
+        {typedText && (
+          <>
+            {typedText}
+            <motion.span
+              className="text-white inline-block h-[40px] w-[3px] bg-orange-500 ml-1"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity }}
+            />
+          </>
+        )}
+      </motion.div>
+
+      <p className="text-gray-400 text-lg md:text-2xl mb-6">
+        Crafting beautiful, responsive, and user-friendly websites.
+      </p>
+
+      <motion.a
+        href="#contact"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="bg-[#DA5F34] text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
+      >
+        Let’s Work Together
+      </motion.a>
+
+      {/* <div className="absolute bottom-0 w-full h-[100px]">
+        <BackgroundAnimation />
+      </div> */}
+    </section>
+  );
 }
