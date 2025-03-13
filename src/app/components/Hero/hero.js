@@ -1,12 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import BackgroundAnimation from '../backgroundAnimation/backgroundAnimation';
+import { useMenu } from '../../context/MenuContext';
 
 export default function Hero() {
   const [typedText, setTypedText] = useState('');
-  const texts = ['Hello,', 'I’m Julia', 'Freelance Frontend Developer'];
+  const texts = ['Hello,', 'I’m Julia', 'a Frontend Developer'];
   const typingSpeed = 100;
+  const { closeMenu } = useMenu();
 
   useEffect(() => {
     let currentTextIndex = 0;
@@ -42,6 +43,11 @@ export default function Hero() {
     };
   }, []);
 
+  const handleButtonClick = () => {
+    closeMenu();
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-900 relative">
       <motion.div
@@ -63,17 +69,17 @@ export default function Hero() {
       </motion.div>
 
       <p className="text-gray-400 text-lg md:text-2xl mb-6">
-        Crafting beautiful, responsive, and user-friendly websites.
+        Crafting beautiful, responsive, and user-friendly websites and webshop.
       </p>
 
-      <motion.a
-        href="#contact"
+      <motion.button
+        onClick={handleButtonClick}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="bg-[#DA5F34] text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
       >
-        Let’s Work Together
-      </motion.a>
+        Let’s Work Together!
+      </motion.button>
 
       {/* <div className="absolute bottom-0 w-full h-[100px]">
         <BackgroundAnimation />

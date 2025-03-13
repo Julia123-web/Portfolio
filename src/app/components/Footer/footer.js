@@ -53,7 +53,7 @@ const Footer = () => {
               href="tel:+310615125932"
               className="text-white hover:text-[#DA5F34] transition-colors"
             >
-              +310615125932
+              +31615125932
             </a>
           </p>
         </div>

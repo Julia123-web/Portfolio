@@ -1,18 +1,25 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import myLogo from '../../../../public/J.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useMenu } from '../../context/MenuContext';
 
 const Header = () => {
-  const [isOpen, setOpen] = useState(false);
+  const { isMenuOpen, closeMenu, toggleMenu } = useMenu();
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Don't close if clicking the menu button
+      if (buttonRef.current && buttonRef.current.contains(event.target)) {
+        return;
+      }
+      // Close if clicking outside menu and button
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setOpen(false);
+        closeMenu();
       }
     };
 
@@ -21,18 +28,14 @@ const Header = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
-
-  const toggleDropdown = () => {
-    setOpen(!isOpen);
-  };
+  }, [closeMenu]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setOpen(false);
+    closeMenu();
   };
 
   return (
@@ -50,49 +53,44 @@ const Header = () => {
 
         {/* Menu Button */}
         <motion.button
+          ref={buttonRef}
           whileHover={{ scale: 1.2 }}
           type="button"
           className="text-[#DA5F34] text-3xl focus:outline-none"
-          onClick={toggleDropdown}
-          aria-label="Open menu"
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleMenu();
+          }}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          ☰
+          {isMenuOpen ? '✕' : '☰'}
         </motion.button>
 
         {/* Dropdown Menu */}
         <div
-          className={`fixed top-16 right-4 bg-[#DA5F34] w-[70%] max-w-md rounded-lg shadow-lg z-40 p-6 transition-transform duration-300 ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`fixed top-16 right-4 bg-[#DA5F34] w-[70%] max-w-md rounded-lg shadow-lg z-50 p-6 transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
           }`}
           ref={menuRef}
         >
-          <div className="flex justify-end mb-4">
-            <button
-              className="text-3xl text-white hover:text-gray-300 transition duration-200"
-              onClick={toggleDropdown}
-              aria-label="Close menu"
-            >
-              ✕
-            </button>
-          </div>
           <nav className="flex flex-col items-center gap-6 text-2xl font-mono">
             <a
               href="#about"
-              className="hover:text-gray-300 transition duration-300"
+              className="text-white hover:text-gray-300 transition duration-300"
               onClick={() => scrollToSection('about')}
             >
               About Me
             </a>
             <a
               href="#projects"
-              className="hover:text-gray-300 transition duration-300"
+              className="text-white hover:text-gray-300 transition duration-300"
               onClick={() => scrollToSection('projects')}
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="hover:text-gray-300 transition duration-300"
+              className="text-white hover:text-gray-300 transition duration-300"
               onClick={() => scrollToSection('contact')}
             >
               Contact

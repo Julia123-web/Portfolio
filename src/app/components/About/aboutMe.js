@@ -17,7 +17,7 @@ export default function About() {
           className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-center"
         >
           <div className="text-[#DA5F34] font-mono text-4xl mb-4 font-semibold">
-            I am a Freelancer Frontend Developer
+            I am a Frontend Developer
           </div>
           <div className="text-white mb-8 leading-relaxed text-lg">
             Hey there! 🌟 So, picture this: seven years ago, I packed my bags in Brazil
